@@ -76,7 +76,10 @@ public class Talep extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Referans talepTipi;
 	
-	//FIXME SABLON
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID")
+	@Fetch(FetchMode.SELECT)
+	private Sablon sablon;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID")
@@ -210,6 +213,14 @@ public class Talep extends PersistentObject {
 
 	public void setTalepTipi(Referans talepTipi) {
 		this.talepTipi = talepTipi;
+	}
+	
+	public Sablon getSablon() {
+		return sablon;
+	}
+
+	public void setSablon(Sablon sablon) {
+		this.sablon = sablon;
 	}
 
 	public Sirket getSirket() {
