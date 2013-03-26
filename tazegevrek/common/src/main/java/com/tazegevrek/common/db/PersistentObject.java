@@ -1,4 +1,4 @@
-package org.tazegevrek.common.db;
+package com.tazegevrek.common.db;
 
 import java.io.Serializable;
 import java.util.Date;

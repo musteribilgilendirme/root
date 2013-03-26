@@ -1,4 +1,4 @@
-package org.tazegevrek.common.db;
+package com.tazegevrek.common.db;
 
 import java.util.Date;
 import java.util.List;
