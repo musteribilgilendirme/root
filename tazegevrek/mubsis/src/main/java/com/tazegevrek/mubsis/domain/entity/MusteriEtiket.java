@@ -18,7 +18,7 @@ import com.tazegevrek.common.db.PersistentObject;
 public class MusteriEtiket extends PersistentObject {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 		
@@ -29,7 +29,7 @@ public class MusteriEtiket extends PersistentObject {
 	private String degerSayisi;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "DURUM_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans durum;
 

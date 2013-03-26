@@ -1,4 +1,4 @@
-package org.tazegevrek.common.db;
+package com.tazegevrek.common.db;
 
 import java.util.Properties;
 
@@ -35,6 +35,15 @@ public class HibernateConfiguration {
 	@Value("${hibernate.schemaUpdate}")
 	private boolean schemaUpdate;
 	
+	@Value("${hibernate.cache.use_second_level_cache}")
+	private boolean secondLevelCache;
+	
+	@Value("${hibernate.cache.use_query_cache}")
+	private boolean queryCache;
+	
+	@Value("${hibernate.cache.region.factory_class}")
+	private String cacheFactoryClass;
+	
 
 	@Bean
 	public AnnotationSessionFactoryBean sessionFactory() {
@@ -42,6 +51,9 @@ public class HibernateConfiguration {
 		props.put("hibernate.dialect", hibernateDialect);
 		props.put("hibernate.format_sql", showSql);
 		props.put("hibernate.show_sql", formatSql);
+		props.put("hibernate.cache.use_second_level_cache",secondLevelCache);
+		props.put("hibernate.cache.use_query_cache",queryCache);
+		props.put("hibernate.cache.region.factory_class",cacheFactoryClass);
 		
 		AnnotationSessionFactoryBean bean = new AnnotationSessionFactoryBean();
 
@@ -50,7 +62,14 @@ public class HibernateConfiguration {
 			bean.setPackagesToScan(packagesToScan);
 		}
 		
-		//bean.setAnnotatedClasses(new Class[]{Product.class});
+		/*
+		try {
+			bean.setAnnotatedClasses(new Class[]{Class.forName("com.tazegevrek.mubsis.domain.entity.Referans")});
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
 		
 		bean.setHibernateProperties(props);
 		bean.setDataSource(this.dataSource);

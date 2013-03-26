@@ -29,7 +29,7 @@ public class Talep extends PersistentObject {
 	private Long aciklama;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "TALEP_DURUMU_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans talepDurumu;
 	
@@ -72,17 +72,17 @@ public class Talep extends PersistentObject {
 	private Long onizlemeBilgilendirmeTutari;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "TALEP_TIPI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans talepTipi;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "SABLON_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sablon sablon;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 

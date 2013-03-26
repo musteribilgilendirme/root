@@ -21,11 +21,11 @@ public class Sirket extends PersistentObject {
 	private String unvani;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "SIRKET_TURU_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans sirketTuru;
 	
-	@Column(name = "UNVANI", nullable = false)
+	@Column(name = "AVANS", nullable = false)
 	private Long avans;
 	
 	@Column(name = "TELEFON")

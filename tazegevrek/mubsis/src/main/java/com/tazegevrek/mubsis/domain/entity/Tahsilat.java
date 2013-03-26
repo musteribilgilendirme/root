@@ -29,17 +29,17 @@ public class Tahsilat extends PersistentObject {
 	private Long tutar;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "KULLANICI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Kullanici kullanici;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "TAHSILAT_TIPI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans tahsilatTipi;
 	

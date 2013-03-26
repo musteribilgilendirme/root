@@ -26,12 +26,12 @@ public class SirketGuncelleme extends PersistentObject {
 	private Date islemTarihi;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "ISLEM_ID")
 	@Fetch(FetchMode.SELECT)
 	private Islem islem;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
@@ -39,11 +39,11 @@ public class SirketGuncelleme extends PersistentObject {
 	private String unvani;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "SIRKET_TURU_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans sirketTuru;
 	
-	@Column(name = "UNVANI", nullable = false)
+	@Column(name = "AVANS", nullable = false)
 	private Long avans;
 	
 	@Column(name = "TELEFON")

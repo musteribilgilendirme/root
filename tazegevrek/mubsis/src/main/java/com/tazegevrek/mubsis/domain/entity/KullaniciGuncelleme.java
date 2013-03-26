@@ -26,12 +26,12 @@ public class KullaniciGuncelleme extends PersistentObject {
 	private Date islemTarihi;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "ISLEM_ID")
 	@Fetch(FetchMode.SELECT)
 	private Islem islem;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "KULLANICI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Kullanici kullanici;
 	
@@ -45,7 +45,7 @@ public class KullaniciGuncelleme extends PersistentObject {
 	private String soyad;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
@@ -59,7 +59,7 @@ public class KullaniciGuncelleme extends PersistentObject {
 	private String email;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "DURUM_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans durum;
 

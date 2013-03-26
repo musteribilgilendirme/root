@@ -20,7 +20,7 @@ import com.tazegevrek.common.db.PersistentObject;
 public class Sablon extends PersistentObject {
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "SABLON_TIPI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans sablonTipi;
 		
@@ -33,12 +33,12 @@ public class Sablon extends PersistentObject {
 	private String ek;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "DURUM_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans durum;
 

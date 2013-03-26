@@ -30,7 +30,7 @@ public class Kullanici extends PersistentObject {
 	private String soyad;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
@@ -44,7 +44,7 @@ public class Kullanici extends PersistentObject {
 	private String email;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "DURUM_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans durum;
 

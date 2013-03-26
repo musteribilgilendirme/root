@@ -24,7 +24,7 @@ public class Il extends PersistentObject{
 	private String ad;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "DURUM_ID",insertable=false,updatable=false)
 	@Fetch(FetchMode.SELECT)
 	private Referans durum;
 

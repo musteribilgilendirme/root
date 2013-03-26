@@ -28,17 +28,17 @@ public class TalepDetay extends PersistentObject {
 	private Date islemTarihi;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "TALEP_ID")
 	@Fetch(FetchMode.SELECT)
 	private Talep talep;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "BILDIRIM_TIPI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans bildirimTipi;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "MUSTERI_ID")
 	@Fetch(FetchMode.SELECT)
 	private Musteri musteri;
 	
@@ -52,16 +52,16 @@ public class TalepDetay extends PersistentObject {
 	
 	@Lob
 	@Type(type = "java.lang.String")
-	@Column(name = "ICERIK")
+	@Column(name = "E")
 	private String ek;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "KOD")
+	@JoinColumn(name = "BILDIRIM_DURUMU_ID")
 	@Fetch(FetchMode.SELECT)
 	private Referans bildirimDurumu;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID")
+	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 
