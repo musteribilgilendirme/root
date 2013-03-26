@@ -30,8 +30,10 @@ public class KullaniciGuncelleme extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Islem islem;
 	
-	@Column(name = "KULLANICI_KODU")
-	private String kullaniciKodu;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID")
+	@Fetch(FetchMode.SELECT)
+	private Kullanici kullanici;
 	
 	@Column(name = "SIFRE", nullable = false)
 	private String sifre;
@@ -77,12 +79,12 @@ public class KullaniciGuncelleme extends PersistentObject {
 		this.islem = islem;
 	}
 	
-	public String getKullaniciKodu() {
-		return kullaniciKodu;
+	public Kullanici getKullanici() {
+		return kullanici;
 	}
 
-	public void setKullaniciKodu(String kullaniciKodu) {
-		this.kullaniciKodu = kullaniciKodu;
+	public void setKullanici(Kullanici kullanici) {
+		this.kullanici = kullanici;
 	}
 
 	public String getSifre() {
