@@ -42,12 +42,12 @@ public abstract class GenericDao<T extends PersistentObject> {
 	
 	private void logAuidit(T entity, String username){
 		if(entity.getId() == null){
-			entity.setInsertTime(new Date());
-			entity.setInsertUser(username);
+			entity.setTanitimZamani(new Date());
+			entity.setTanimlayanKullaniciKodu(username);
 		}
 		else{
-			entity.setUpdateTime(new Date());
-			entity.setUpdateUser(username);
+			entity.setGuncellemeZamani(new Date());
+			entity.setGuncelleyenKullaniciKodu(username);
 		}
 	}
 

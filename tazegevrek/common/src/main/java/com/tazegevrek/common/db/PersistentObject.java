@@ -19,92 +19,40 @@ import org.hibernate.annotations.GenericGenerator;
 public abstract class PersistentObject implements Serializable {
 
 	@Id
-	@GenericGenerator(name="gen",strategy="increment")
-	@GeneratedValue(strategy = GenerationType.IDENTITY,generator="gen")
+	@GenericGenerator(name = "gen", strategy = "increment")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "gen")
 	@Column(name = "ID", nullable = false)
 	private Long id;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "INSERT_TIME",nullable=false)
-	private Date insertTime;
-	
-	@Column(name = "INSERT_USER",nullable=false)
-	private String insertUser;
-	
+	@Column(name = "TANITIM_ZAMANI", nullable = false)
+	private Date tanitimZamani;
+
+	@Column(name = "TANIMLAYAN_KULLANICI_KODU", nullable = false)
+	private String tanimlayanKullaniciKodu;
+
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME")
-	private Date updateTime;
-	
-	@Column(name = "UPDATE_USER")
-	private String updateUser;
-	
+	@Column(name = "GUNCELLEME_ZAMANI")
+	private Date guncellemeZamani;
+
+	@Column(name = "GUNCELLEYEN_KULLANICI_KODU")
+	private String guncelleyenKullaniciKodu;
+
 	@Version
-	@Column(name = "VERSION",nullable=false)
-	private int version = 0;
+	@Column(name = "VERSION", nullable = false)
+	private int versiyon = 0;
 
 	protected void copy(final PersistentObject source) {
 		this.id = source.id;
-		this.insertTime = source.insertTime;
-		this.insertUser = source.insertUser;
-		this.updateTime = source.updateTime;
-		this.updateUser = source.updateUser;
-		this.version = source.version;
+		this.tanitimZamani = source.tanitimZamani;
+		this.tanimlayanKullaniciKodu = source.tanimlayanKullaniciKodu;
+		this.guncellemeZamani = source.guncellemeZamani;
+		this.guncelleyenKullaniciKodu = source.guncelleyenKullaniciKodu;
+		this.versiyon = source.versiyon;
 	}
 
 	protected static boolean getBooleanValue(final Boolean value) {
 		return Boolean.valueOf(String.valueOf(value));
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	@SuppressWarnings("unused")
-	private void setId(final Long id) {
-		this.id = id;
-	}
-
-	public int getVersion() {
-		return this.version;
-	}
-
-	@SuppressWarnings("unused")
-	private void setVersion(final int version) {
-		this.version = version;
-	}
-	
-	
-
-	public Date getInsertTime() { 
-		return insertTime;
-	}
-
-	public void setInsertTime(Date insertTime) {
-		this.insertTime = insertTime;
-	}
-
-	public String getInsertUser() {
-		return insertUser;
-	}
-
-	public void setInsertUser(String insertUser) {
-		this.insertUser = insertUser;
-	}
-
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public String getUpdateUser() {
-		return updateUser;
-	}
-
-	public void setUpdateUser(String updateUser) {
-		this.updateUser = updateUser;
 	}
 
 	@Override
@@ -126,4 +74,53 @@ public abstract class PersistentObject implements Serializable {
 		}
 		return true;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getTanitimZamani() {
+		return tanitimZamani;
+	}
+
+	public void setTanitimZamani(Date tanitimZamani) {
+		this.tanitimZamani = tanitimZamani;
+	}
+
+	public String getTanimlayanKullaniciKodu() {
+		return tanimlayanKullaniciKodu;
+	}
+
+	public void setTanimlayanKullaniciKodu(String tanimlayanKullaniciKodu) {
+		this.tanimlayanKullaniciKodu = tanimlayanKullaniciKodu;
+	}
+
+	public Date getGuncellemeZamani() {
+		return guncellemeZamani;
+	}
+
+	public void setGuncellemeZamani(Date guncellemeZamani) {
+		this.guncellemeZamani = guncellemeZamani;
+	}
+
+	public String getGuncelleyenKullaniciKodu() {
+		return guncelleyenKullaniciKodu;
+	}
+
+	public void setGuncelleyenKullaniciKodu(String guncelleyenKullaniciKodu) {
+		this.guncelleyenKullaniciKodu = guncelleyenKullaniciKodu;
+	}
+
+	public int getVersiyon() {
+		return versiyon;
+	}
+
+	public void setVersiyon(int versiyon) {
+		this.versiyon = versiyon;
+	}
+
 }
