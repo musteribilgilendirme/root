@@ -26,6 +26,7 @@ public class ReferansDao extends GenericDao<Referans> {
 		Criteria criteria = getSession().createCriteria(Referans.class,"r");
 		criteria.add(Restrictions.eq("r.grup", grup));
 		List<Referans> referansList = criteria.list();
+		criteria.setCacheable(true);
 		return referansList;
 	}
 	
@@ -33,6 +34,7 @@ public class ReferansDao extends GenericDao<Referans> {
 		Criteria criteria = getSession().createCriteria(Referans.class,"r");
 		criteria.add(Restrictions.eq("r.kod", kod));
 		Referans referans = (Referans) criteria.uniqueResult();
+		criteria.setCacheable(true);
 		return referans;
 	}
 

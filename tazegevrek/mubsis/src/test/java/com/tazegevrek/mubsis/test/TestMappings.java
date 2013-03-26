@@ -69,6 +69,8 @@ public class TestMappings {
 		
 		Referans cinsiyetErkekx = referansDao.referansSorgula(CinsiyetEnum.ERKEK);
 		logger.info(cinsiyetErkekx.getKod());
+		
+		System.out.println(sessionFactory.getStatistics().getSecondLevelCacheHitCount());
 	}
 	
 

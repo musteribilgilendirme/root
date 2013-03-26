@@ -12,7 +12,7 @@ import com.tazegevrek.common.db.PersistentObject;
 @Entity
 @Table(name = "REFERANS")
 @SuppressWarnings("serial")
-
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Referans extends PersistentObject{
 	
 	@Column(name = "KEY", nullable = false,unique = true)

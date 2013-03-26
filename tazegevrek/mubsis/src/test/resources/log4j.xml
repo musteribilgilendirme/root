@@ -31,6 +31,12 @@
 	<logger name="org.springframework.web">
 		<level value="debug" />
 	</logger>
+	
+	<logger name="org.hibernate.cache">
+		<level value="trace" />
+	</logger>
+	
+	
 
 	<!-- Root Logger -->
 	<root>
