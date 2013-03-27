@@ -28,7 +28,7 @@ public abstract class PersistentObject implements Serializable {
 	@Column(name = "TANITIM_ZAMANI", nullable = false)
 	private Date tanitimZamani;
 
-	@Column(name = "TANIMLAYAN_KULLANICI_KODU", nullable = false)
+	@Column(name = "TANITAN_KULLANICI_KODU", nullable = false)
 	private String tanimlayanKullaniciKodu;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -39,7 +39,7 @@ public abstract class PersistentObject implements Serializable {
 	private String guncelleyenKullaniciKodu;
 
 	@Version
-	@Column(name = "VERSION", nullable = false)
+	@Column(name = "VERSIYON", nullable = false)
 	private int versiyon = 0;
 
 	protected void copy(final PersistentObject source) {
