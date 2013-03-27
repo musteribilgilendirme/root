@@ -62,8 +62,15 @@
                 
             </form>
             
-            <form id="recoverform" action="#" class="form-vertical">
-				<p><s:message code="label.enter.email.to.recover.password" /></p>
+            <form id="recoverform" action="#" class="form-vertical" >
+				<p><b><s:message code="label.notify.username.password" /></b><b>
+
+                <div class="control-group">
+                    <div class="controls">
+                       <p> <label><s:message code="label.enter.email.adress.to.recover" /></label></p>
+                    </div>
+                </div>
+
 				<div class="control-group">
                     <div class="controls">
                         <div class="input-prepend">
@@ -71,10 +78,14 @@
                         </div>
                     </div>
                 </div>
+                
+
+                
                 <div class="form-actions">
                     <span class="pull-left"><a href="#" class="flip-link" id="to-login"><s:message code="label.back.to.login" /></a></span>
                     <span class="pull-right"><input type="submit" class="btn btn-inverse" value="<s:message code="label.send" />" /></span>
                 </div> 
+   
             </form>
         </div>
         
