@@ -22,19 +22,29 @@
             <img src=" <c:url value="/resources/img/logo.png" />" alt="" />
         </div>
         <div id="loginbox">            
-            <form id="loginform" class="form-vertical" action="index.html">
-				<p><s:message code="label.enter.username.and.password" /></p>
+            <form id="loginform" name="f" class="form-vertical" method="post" action="<c:url value='dologin' />">
+				<p>
+					<s:message code="label.enter.username.and.password" />
+				</p>
+				<!-- 
+				<p>
+					<c:if test="${not empty error}">
+						Your login attempt was not successful, try again.<br /> Caused :
+						${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+					</c:if>
+				</p>
+				 -->
                 <div class="control-group">
                     <div class="controls">
                         <div class="input-prepend">
-                            <span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="<s:message code="label.username" />" />
+                            <span class="add-on"><i class="icon-user"></i></span><input name="j_username" type="text" placeholder="<s:message code="label.username" />" />
                         </div>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="controls"> 
                         <div class="input-prepend">
-                            <span class="add-on"><i class="icon-lock"></i></span><input type="password" placeholder="<s:message code="label.password" />" />
+                            <span class="add-on"><i class="icon-lock"></i></span><input name='j_password' type="password" placeholder="<s:message code="label.password" />" />
                         </div>
                     </div>
                 </div>

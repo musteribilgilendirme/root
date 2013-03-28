@@ -52,7 +52,7 @@
 			<li class="btn btn-inverse"><a title="" href="#"><i
 					class="icon icon-cog"></i> <span class="text"><s:message
 							code="label.settings" /></span></a></li>
-			<li class="btn btn-inverse"><a title="" href="login.html"><i
+			<li class="btn btn-inverse"><a title="" href="<c:url value="/logout" />"><i
 					class="icon icon-share-alt"></i> <span class="text"><s:message
 							code="label.logout" /></span></a></li>
 		</ul>
