@@ -13,6 +13,8 @@
 	<import resource="classpath:appcontext/data-access-config.xml"/>
 	<import resource="webmvc-config.xml"/>
 	<import resource="classpath:appcontext/locale-config.xml"/>
+	<import resource="security-config.xml"/>
+
 
  
-</beans>
+</beans> 
