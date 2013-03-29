@@ -60,15 +60,15 @@ public class TestMappings {
 		List<Referans> cinsiyetListesi = referansDao.referansGrubuSorgula(CinsiyetEnum.GRUP);
 		
 		for(Referans cinsiyet : cinsiyetListesi){
-			logger.info(cinsiyet.getKod());
+			logger.info(cinsiyet.getKey());
 		}
 		
 		
 		Referans cinsiyetErkek = referansDao.referansSorgula(CinsiyetEnum.ERKEK);
-		logger.info(cinsiyetErkek.getKod());
+		logger.info(cinsiyetErkek.getKey());
 		
 		Referans cinsiyetErkekx = referansDao.referansSorgula(CinsiyetEnum.ERKEK);
-		logger.info(cinsiyetErkekx.getKod());
+		logger.info(cinsiyetErkekx.getKey());
 		
 		System.out.println(sessionFactory.getStatistics().getSecondLevelCacheHitCount());
 	}

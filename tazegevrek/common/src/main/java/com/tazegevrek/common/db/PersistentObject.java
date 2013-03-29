@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
+import org.hibernate.annotations.FilterDef;
 import org.hibernate.annotations.GenericGenerator;
 
 @SuppressWarnings("serial")

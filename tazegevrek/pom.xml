@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>tazegevrek</name>
-	<!-- Test -->
+	
 	<modules>
 		<module>module-bom</module>
 		<module>common</module>

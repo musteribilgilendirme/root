@@ -44,7 +44,7 @@ public class Kullanici extends PersistentObject {
 	private String email;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID")
+	@JoinColumn(name = "DURUM_ID",referencedColumnName="key")
 	@Fetch(FetchMode.SELECT)
 	private Referans durum;
 

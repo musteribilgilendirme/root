@@ -16,7 +16,7 @@ import com.tazegevrek.common.db.PersistentObject;
 public class Referans extends PersistentObject{
 	
 	@Column(name = "KEY", nullable = false,unique = true)
-	private String kod;
+	private String key; 
 	
 	@Column(name = "ACIKLAMA", nullable = false)
 	private String aciklama;
@@ -24,12 +24,12 @@ public class Referans extends PersistentObject{
 	@Column(name = "GRUP", nullable = false)
 	private String grup;
 
-	public String getKod() {
-		return kod;
+	public String getKey() {
+		return key;
 	}
 
-	public void setKod(String kod) {
-		this.kod = kod;
+	public void setKey(String key) {
+		this.key = key;
 	}
 
 	public String getAciklama() {

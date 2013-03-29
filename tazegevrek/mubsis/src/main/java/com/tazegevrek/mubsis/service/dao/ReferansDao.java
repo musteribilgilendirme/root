@@ -32,7 +32,7 @@ public class ReferansDao extends GenericDao<Referans> {
 	
 	public Referans referansSorgula(String kod){
 		Criteria criteria = getSession().createCriteria(Referans.class,"r");
-		criteria.add(Restrictions.eq("r.kod", kod));
+		criteria.add(Restrictions.eq("r.key", kod));
 		Referans referans = (Referans) criteria.uniqueResult();
 		criteria.setCacheable(true);
 		return referans;
