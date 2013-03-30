@@ -34,7 +34,17 @@ body {
     display: block;
 }
 #loginbox {
-    height: 252px;
+    height: 265px; 
+	background: #ffffff;
+    box-shadow: 0 0 4px #000000;
+    border-radius: 7px;
+    overflow: hidden !important;
+    text-align: center;
+    position: relative;   
+}
+
+#recoverbox {
+    height: 1000px; 
 	background: #ffffff;
     box-shadow: 0 0 4px #000000;
     border-radius: 7px;

@@ -27,11 +27,9 @@ public class Talep extends PersistentObject {
 	
 	@Column(name = "ACIKLAMA")
 	private Long aciklama;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "TALEP_DURUMU_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans talepDurumu;
+
+	@Column(name = "TALEP_DURUMU_ID")
+	private String talepDurumu;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "BASLAMA_ZAMANI", nullable = false)
@@ -70,21 +68,15 @@ public class Talep extends PersistentObject {
 	
 	@Column(name = "ONIZLEME_TUTARI")
 	private Long onizlemeBilgilendirmeTutari;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "TALEP_TIPI_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans talepTipi;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "SABLON_ID")
-	@Fetch(FetchMode.SELECT)
-	private Sablon sablon;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "SIRKET_ID")
-	@Fetch(FetchMode.SELECT)
-	private Sirket sirket;
+
+	@Column(name = "TALEP_TIPI_ID")
+	private String talepTipi;
+
+	@Column(name = "SABLON_ID")
+	private String sablon;
+
+	@Column(name = "SIRKET_ID")
+	private String sirket;
 
 	public Long getAdi() {
 		return adi;
@@ -102,13 +94,6 @@ public class Talep extends PersistentObject {
 		this.aciklama = aciklama;
 	}
 
-	public Referans getTalepDurumu() {
-		return talepDurumu;
-	}
-
-	public void setTalepDurumu(Referans talepDurumu) {
-		this.talepDurumu = talepDurumu;
-	}
 
 	public Date getBaslamaZamani() {
 		return baslamaZamani;
@@ -207,28 +192,37 @@ public class Talep extends PersistentObject {
 		this.onizlemeBilgilendirmeTutari = onizlemeBilgilendirmeTutari;
 	}
 
-	public Referans getTalepTipi() {
+	public String getTalepDurumu() {
+		return talepDurumu;
+	}
+
+	public void setTalepDurumu(String talepDurumu) {
+		this.talepDurumu = talepDurumu;
+	}
+
+	public String getTalepTipi() {
 		return talepTipi;
 	}
 
-	public void setTalepTipi(Referans talepTipi) {
+	public void setTalepTipi(String talepTipi) {
 		this.talepTipi = talepTipi;
 	}
-	
-	public Sablon getSablon() {
+
+	public String getSablon() {
 		return sablon;
 	}
 
-	public void setSablon(Sablon sablon) {
+	public void setSablon(String sablon) {
 		this.sablon = sablon;
 	}
 
-	public Sirket getSirket() {
+	public String getSirket() {
 		return sirket;
 	}
 
-	public void setSirket(Sirket sirket) {
+	public void setSirket(String sirket) {
 		this.sirket = sirket;
 	}
-	
+
+
 }

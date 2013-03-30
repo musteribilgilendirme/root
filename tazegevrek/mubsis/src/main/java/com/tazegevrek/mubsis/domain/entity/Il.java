@@ -23,10 +23,8 @@ public class Il extends PersistentObject{
 	@Column(name = "AD")
 	private String ad;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID",insertable=false,updatable=false)
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
 	public String getAd() {
 		return ad;
@@ -36,11 +34,11 @@ public class Il extends PersistentObject{
 		this.ad = ad;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
 	

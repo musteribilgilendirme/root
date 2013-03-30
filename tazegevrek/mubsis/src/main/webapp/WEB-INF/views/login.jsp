@@ -15,25 +15,49 @@
     	<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-responsive.min.css" />" />    
     	<link rel="stylesheet" href="<c:url value="/resources/css/uniform.css" />" />
     	<link rel="stylesheet" href="<c:url value="/resources/css/select2.css" />" />
+             
+			<script src="<c:url value="/resources/js/jquery.min.js" />"></script>  
+        	<script src="<c:url value="/resources/js/unicorn.login.js" />"></script> 
+        
+            <script src="/mubsis/resources/js/jquery.min.js"></script>
+            <script src="/mubsis/resources/js/jquery.ui.custom.js"></script>
+            <script src="/mubsis/resources/js/bootstrap.min.js"></script>
+            <script src="/mubsis/resources/js/bootstrap-colorpicker.js"></script>
+            <script src="/mubsis/resources/js/bootstrap-datepicker.js"></script>
+            <script src="/mubsis/resources/js/jquery.uniform.js"></script>
+            <script src="/mubsis/resources/js/select2.min.js"></script>
+            <script src="/mubsis/resources/js/unicorn.js"></script>
+            <script src="/mubsis/resources/js/unicorn.form_common.js"></script>
+        
+
                        
     </head>
     <body>
         <div id="logo">
             <img src=" <c:url value="/resources/img/logo.png" />" alt="" />
         </div>
-        <div id="loginbox">            
-            <form id="loginform" name="f" class="form-vertical" method="post" action="<c:url value='dologin' />">
-				<p>
+        
+        <div id="loginbox" >            
+            <form id="loginform"  name="f" class="form-vertical" method="post" action="<c:url value='dologin' />">
+				<p >
 					<s:message code="label.enter.username.and.password" />
 				</p>
-				<!-- 
-				<p>
+				 
+				
 					<c:if test="${not empty error}">
-						Your login attempt was not successful, try again.<br /> Caused :
-						${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+						<p style="color:red">
+							${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+							
+								            
+					        <script type='text/javascript'>
+						        $(document).ready(function() {
+									$('#loginbox').css({"height":"300px"});  
+								});
+							</script> 
+						</p>
 					</c:if>
-				</p>
-				 -->
+				
+			
                 <div class="control-group">
                     <div class="controls">
                         <div class="input-prepend">
@@ -92,7 +116,7 @@
 
                 
                 <div class="form-actions">
-                    <span class="pull-left"><a href="#" class="flip-link" id="to-login"><s:message code="label.back.to.login" /></a></span>
+                    <span class="pull-left"><a href="<c:url value="/login" />" class="flip-link" id="to-login"><s:message code="label.back.to.login" /></a></span>
                     <span class="pull-right"><input type="submit" class="btn btn-inverse" value="<s:message code="label.send" />" /></span>
                 </div> 
    
@@ -102,18 +126,16 @@
         
         
         
-        <script src="<c:url value="/resources/js/jquery.min.js" />"></script>  
-        <script src="<c:url value="/resources/js/unicorn.login.js" />"></script> 
-        
-            <script src="/mubsis/resources/js/jquery.min.js"></script>
-            <script src="/mubsis/resources/js/jquery.ui.custom.js"></script>
-            <script src="/mubsis/resources/js/bootstrap.min.js"></script>
-            <script src="/mubsis/resources/js/bootstrap-colorpicker.js"></script>
-            <script src="/mubsis/resources/js/bootstrap-datepicker.js"></script>
-            <script src="/mubsis/resources/js/jquery.uniform.js"></script>
-            <script src="/mubsis/resources/js/select2.min.js"></script>
-            <script src="/mubsis/resources/js/unicorn.js"></script>
-            <script src="/mubsis/resources/js/unicorn.form_common.js"></script>
+      	   
+            
+        <script type='text/javascript'>
+
+			
+			$("#to-recover").click(function() {
+				$('#loginbox').css({"height":"250px"});   
+			});
+						
+		</script> 
         
     </body>
 </html>

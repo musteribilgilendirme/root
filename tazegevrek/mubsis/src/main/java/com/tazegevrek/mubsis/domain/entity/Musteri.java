@@ -32,10 +32,8 @@ public class Musteri extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "MUSTERI_DURUMU_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans musteriDurumu;
+	@Column(name = "MUSTERI_DURUMU_ID")
+	private String musteriDurumu;
 	
 	@Column(name = "TELEFON")
 	private String telefon;
@@ -58,15 +56,11 @@ public class Musteri extends PersistentObject {
 	@Column(name = "DOGUM_TARIHI", nullable = false)
 	private Date dogumTarihi;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "CINSIYET_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans cinsiyeti;
+	@Column(name = "CINSIYET_ID")
+	private String cinsiyeti;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "MEDENI_HALI_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans medeniHali;
+	@Column(name = "MEDENI_HALI_ID")
+	private String medeniHali;
 	
 	@Column(name = "TC_KIMLIK_NO")
 	private String tcKimlikNo;
@@ -95,11 +89,11 @@ public class Musteri extends PersistentObject {
 		this.sirket = sirket;
 	}
 
-	public Referans getMusteriDurumu() {
+	public String getMusteriDurumu() {
 		return musteriDurumu;
 	}
 
-	public void setMusteriDurumu(Referans musteriDurumu) {
+	public void setMusteriDurumu(String musteriDurumu) {
 		this.musteriDurumu = musteriDurumu;
 	}
 
@@ -151,19 +145,19 @@ public class Musteri extends PersistentObject {
 		this.dogumTarihi = dogumTarihi;
 	}
 
-	public Referans getCinsiyeti() {
+	public String getCinsiyeti() {
 		return cinsiyeti;
 	}
 
-	public void setCinsiyeti(Referans cinsiyeti) {
+	public void setCinsiyeti(String cinsiyeti) {
 		this.cinsiyeti = cinsiyeti;
 	}
 
-	public Referans getMedeniHali() {
+	public String getMedeniHali() {
 		return medeniHali;
 	}
 
-	public void setMedeniHali(Referans medeniHali) {
+	public void setMedeniHali(String medeniHali) {
 		this.medeniHali = medeniHali;
 	}
 

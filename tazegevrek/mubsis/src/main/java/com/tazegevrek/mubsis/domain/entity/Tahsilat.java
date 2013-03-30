@@ -37,11 +37,9 @@ public class Tahsilat extends PersistentObject {
 	@JoinColumn(name = "SIRKET_ID")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "TAHSILAT_TIPI_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans tahsilatTipi;
+
+	@Column(name = "TAHSILAT_TIPI_ID")
+	private String tahsilatTipi;
 	
 	@Column(name = "ONCEKI_AVANS", nullable = false)
 	private Long oncekiAvans;
@@ -78,11 +76,11 @@ public class Tahsilat extends PersistentObject {
 		this.sirket = sirket;
 	}
 
-	public Referans getTahsilatTipi() {
+	public String getTahsilatTipi() {
 		return tahsilatTipi;
 	}
 
-	public void setTahsilatTipi(Referans tahsilatTipi) {
+	public void setTahsilatTipi(String tahsilatTipi) {
 		this.tahsilatTipi = tahsilatTipi;
 	}
 

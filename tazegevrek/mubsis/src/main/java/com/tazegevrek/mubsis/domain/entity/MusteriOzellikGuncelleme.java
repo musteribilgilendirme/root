@@ -52,10 +52,8 @@ public class MusteriOzellikGuncelleme extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;	
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
 	public Date getIslemTarihi() {
 		return islemTarihi;
@@ -113,12 +111,14 @@ public class MusteriOzellikGuncelleme extends PersistentObject {
 		this.sirket = sirket;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
+
+
 	
 }

@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -31,6 +32,13 @@ public class TestKullaniciIslemleri {
 	public void testKullaniciSorgulama(){
 		Kullanici kullanici = kullaniciDao.kullaniciSorgula("eren");		
 		Assert.assertNull(kullanici);			
+	}
+	
+	@Test
+	@Transactional(propagation=Propagation.SUPPORTS,readOnly=false)
+	public void passwordCreator(){
+		Md5PasswordEncoder e = new Md5PasswordEncoder();
+		System.out.println(e.encodePassword("123456", null));
 	}
 	
 

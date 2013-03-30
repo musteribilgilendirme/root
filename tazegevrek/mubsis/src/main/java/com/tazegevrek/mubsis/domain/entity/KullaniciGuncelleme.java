@@ -58,10 +58,8 @@ public class KullaniciGuncelleme extends PersistentObject {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
 	public Date getIslemTarihi() {
 		return islemTarihi;
@@ -143,13 +141,15 @@ public class KullaniciGuncelleme extends PersistentObject {
 		this.email = email;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
+
+
 	
 	
 }

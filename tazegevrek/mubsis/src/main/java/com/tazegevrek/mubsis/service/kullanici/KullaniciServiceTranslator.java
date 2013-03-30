@@ -12,11 +12,11 @@ public class KullaniciServiceTranslator {
 		detay.setRol(kullanici.getRol());
 		detay.setSifre(kullanici.getSifre());
 		detay.setKullaniciKodu(kullanici.getKullaniciKodu());
-		detay.setHesabinKullanimSuresiDolduMu(false);
+		detay.setHesabinKullanimSuresiDolduMu(true);
 		detay.setHesapKilitliDegilMi(true);
-		detay.setSertifikaGecerliligiDolduMu(false);
+		detay.setSertifikaGecerliligiDolduMu(true);
 		
-		boolean aktifMi = kullanici.getDurum().getKey().equals(DurumEnum.AKTIF.getValue());
+		boolean aktifMi = kullanici.getDurum().equals(DurumEnum.AKTIF.getValue());
 		detay.setAktifMi(aktifMi);
 		return detay;
 	}

@@ -30,10 +30,8 @@ public class MusteriEtiketDegeri extends PersistentObject {
 	@Column(name = "DEGER")
 	private String deger;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
 	public Sirket getSirket() {
 		return sirket;
@@ -59,12 +57,14 @@ public class MusteriEtiketDegeri extends PersistentObject {
 		this.deger = deger;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
+
 	
-	}
+	
+}

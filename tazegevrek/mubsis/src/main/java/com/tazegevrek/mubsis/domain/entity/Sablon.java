@@ -19,10 +19,8 @@ import com.tazegevrek.common.db.PersistentObject;
 @SuppressWarnings("serial")
 public class Sablon extends PersistentObject {
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "SABLON_TIPI_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans sablonTipi;
+	@Column(name = "SABLON_TIPI_ID")
+	private String sablonTipi;
 		
 	@Column(name = "ICERIK")
 	private String icerik;
@@ -37,16 +35,14 @@ public class Sablon extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
-	public Referans getSablonTipi() {
+	public String getSablonTipi() {
 		return sablonTipi;
 	}
 
-	public void setSablonTipi(Referans sablonTipi) {
+	public void setSablonTipi(String sablonTipi) {
 		this.sablonTipi = sablonTipi;
 	}
 
@@ -74,11 +70,11 @@ public class Sablon extends PersistentObject {
 		this.sirket = sirket;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
 

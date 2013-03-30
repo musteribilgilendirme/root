@@ -2,15 +2,10 @@ package com.tazegevrek.mubsis.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import com.tazegevrek.common.db.PersistentObject;
 
@@ -23,10 +18,8 @@ public class Islem extends PersistentObject {
 	@Column(name = "ACIKLAMA")
 	private String aciklama;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID",insertable=false,updatable=false)
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
 	public String getAciklama() {
 		return aciklama;
@@ -36,12 +29,14 @@ public class Islem extends PersistentObject {
 		this.aciklama = aciklama;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
+
+
 	
 }

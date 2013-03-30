@@ -19,11 +19,9 @@ public class Sirket extends PersistentObject {
 
 	@Column(name = "UNVANI", nullable = false)
 	private String unvani;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "SIRKET_TURU_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans sirketTuru;
+
+	@Column(name = "SIRKET_TURU_ID")
+	private String sirketTuru;
 	
 	@Column(name = "AVANS", nullable = false)
 	private Long avans;
@@ -48,11 +46,11 @@ public class Sirket extends PersistentObject {
 		this.unvani = unvani;
 	}
 
-	public Referans getSirketTuru() {
+	public String getSirketTuru() {
 		return sirketTuru;
 	}
 
-	public void setSirketTuru(Referans sirketTuru) {
+	public void setSirketTuru(String sirketTuru) {
 		this.sirketTuru = sirketTuru;
 	}
 

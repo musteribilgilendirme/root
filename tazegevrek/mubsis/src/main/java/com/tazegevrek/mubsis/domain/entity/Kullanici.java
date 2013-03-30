@@ -43,10 +43,8 @@ public class Kullanici extends PersistentObject {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "DURUM_ID",referencedColumnName="key")
-	@Fetch(FetchMode.SELECT)
-	private Referans durum;
+	@Column(name = "DURUM_ID")
+	private String durum;
 
 	public String getKullaniciKodu() {
 		return kullaniciKodu;
@@ -112,12 +110,14 @@ public class Kullanici extends PersistentObject {
 		this.email = email;
 	}
 
-	public Referans getDurum() {
+	public String getDurum() {
 		return durum;
 	}
 
-	public void setDurum(Referans durum) {
+	public void setDurum(String durum) {
 		this.durum = durum;
 	}
+
+	
 	
 }
