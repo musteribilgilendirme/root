@@ -56,8 +56,7 @@
 							</script> 
 						</p>
 					</c:if>
-				
-			
+					
                 <div class="control-group">
                     <div class="controls">
                         <div class="input-prepend">
@@ -86,7 +85,7 @@
 
                 <div class="form-actions">
 					<span class="pull-left">
-						<a href="#" style="font-size:14px" class="flip-link" id="to-recover"><s:message code="label.recover.password" /></a>
+						<a href="#recover" style="font-size:14px" class="flip-link" id="to-recover"><s:message code="label.recover.password" /></a>
 						|
 						<a href="#" style="font-size:14px" class="flip-link" id="to-signup"><s:message code="label.sign.in" /></a>
 					</span>
@@ -96,28 +95,46 @@
                 
             </form>
             
-            <form id="recoverform" action="#" class="form-vertical" >
+            <form id="recoverform" action="<c:url value='recoveruser' />" class="form-vertical" >
 				<p><b><s:message code="label.notify.username.password" /></b><b>
 
                 <div class="control-group">
                     <div class="controls">
-                       <p> <label><s:message code="label.enter.email.adress.to.recover" /></label></p>
+                       
+                       <c:if test="${empty recover}">
+                       		<p><label><s:message code="label.enter.email.adress.to.recover" /></label></p>
+                       </c:if>
+                       
+                       <c:if test="${not empty recover}">
+                       		<p><label style="color:green"><s:message code="label.successfuly.login.information.send.to.user" /></label></p>
+                       		
+                      		<script type='text/javascript'>
+						        $(document).ready(function() {
+									$('#to-recover').click();  
+									$('#loginbox').css({"height":"160px"});  
+								});
+							</script> 
+                       </c:if>
+                       
                     </div>
                 </div>
-
-				<div class="control-group">
-                    <div class="controls">
-                        <div class="input-prepend">
-                            <span class="add-on"><i class="icon-envelope"></i></span><input type="text" placeholder="<s:message code="label.email.adress" />" />
-                        </div>
-                    </div>
-                </div>
-                
+ 				<c:if test="${empty recover}">
+					<div class="control-group">
+	                    <div class="controls">
+	                        <div class="input-prepend">
+	                            <span class="add-on"><i class="icon-envelope"></i></span><input type="text" placeholder="<s:message code="label.email.adress" />" name="email" />
+	                        </div>
+	                    </div>
+	                </div>
+                </c:if>
 
                 
                 <div class="form-actions">
                     <span class="pull-left"><a href="<c:url value="/login" />" class="flip-link" id="to-login"><s:message code="label.back.to.login" /></a></span>
-                    <span class="pull-right"><input type="submit" class="btn btn-inverse" value="<s:message code="label.send" />" /></span>
+                    <c:if test="${empty recover}">
+                    	<span class="pull-right"><input type="submit" class="btn btn-inverse" value="<s:message code="label.send" />" /></span>
+                    </c:if>
+                    
                 </div> 
    
             </form>

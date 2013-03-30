@@ -20,6 +20,12 @@ public class LoginController {
 		model.addAttribute("error", "true");
 		return "login";
 	}
+	
+	@RequestMapping(value="/recoveruser", method = RequestMethod.GET)
+	public String recover(ModelMap model) {
+		model.addAttribute("recover", "true");
+		return "login";
+	}
  
 	
 	
