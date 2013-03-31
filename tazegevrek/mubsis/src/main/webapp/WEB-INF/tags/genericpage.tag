@@ -113,6 +113,8 @@
 	<script src="<c:url value="/resources/js/fullcalendar.min.js" />"></script>
 	<script src="<c:url value="/resources/js/unicorn.js" />"></script>
 	<script src="<c:url value="/resources/js/unicorn.dashboard.js" />"></script>
+	<script src="<c:url value="/resources/js/unicorn.form_validation.js" />"></script>
+   <script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
 
 
 
