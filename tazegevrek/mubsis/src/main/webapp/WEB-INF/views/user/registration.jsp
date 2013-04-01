@@ -20,11 +20,13 @@
 	
 		<jsp:body>
 			
+			
+		<c:if test="${empty success}">	
 		  <div id="loginbox" style="width: 525px;height: 425px">    
 		   
 					
 		
-		     
+		      
 		            <form:form commandName="newUserDTO" action="${registerFormUrl}" cssClass="form-horizontal"  >
 							
 							<div class="widget-title">
@@ -99,7 +101,22 @@
 				</script> 
 			</div>
 		
-			
+		</c:if>
+		
+		 <c:if test="${not empty success}">
+		 	<div id="loginbox" style="height: 160px"> 
+		 		  <form:form commandName="newUserDTO" action="${registerFormUrl}" cssClass="form-vertical"  >
+                  	<p><label style="color:green"><s:message code="label.successfuly.registration.email.send" /></label></p>
+                       		
+                  	<div class="form-actions">
+						<span class="pull-left"><a href="<c:url value="/user/login" />" class="flip-link" id="to-login"><s:message code="label.login" /></a></span>
+		           	</div>	
+
+		 		
+		 		  </form:form>
+		 	</div>
+		 </c:if>
+		
 		</jsp:body>
 	
 	</mubsis:loginpage>

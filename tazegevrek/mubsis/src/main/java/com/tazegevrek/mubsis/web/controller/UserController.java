@@ -63,7 +63,8 @@ public class UserController {
 			model.addAttribute("error", "true");
 			return "user/registration";
 		}
-		return "user/registartionSuccess";
+		model.addAttribute("success","true");
+		return "user/registration";
 	}
 	
 
