@@ -38,7 +38,7 @@ public class SirketGuncelleme extends PersistentObject {
 	@Column(name = "UNVANI", nullable = false)
 	private String unvani;
 	
-	@Column(name = "SIRKET_TURU_ID")
+	@Column(name = "SIRKET_TURU")
 	private String sirketTuru;
 	
 	@Column(name = "AVANS", nullable = false)

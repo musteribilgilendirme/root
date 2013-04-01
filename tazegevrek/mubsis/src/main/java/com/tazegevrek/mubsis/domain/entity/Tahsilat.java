@@ -38,7 +38,7 @@ public class Tahsilat extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 
-	@Column(name = "TAHSILAT_TIPI_ID")
+	@Column(name = "TAHSILAT_TIPI")
 	private String tahsilatTipi;
 	
 	@Column(name = "ONCEKI_AVANS", nullable = false)

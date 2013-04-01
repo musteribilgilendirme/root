@@ -19,7 +19,7 @@ import com.tazegevrek.common.db.PersistentObject;
 @SuppressWarnings("serial")
 public class Sablon extends PersistentObject {
 
-	@Column(name = "SABLON_TIPI_ID")
+	@Column(name = "SABLON_TIPI")
 	private String sablonTipi;
 		
 	@Column(name = "ICERIK")
@@ -35,7 +35,7 @@ public class Sablon extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public String getSablonTipi() {

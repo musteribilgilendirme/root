@@ -33,7 +33,7 @@ public class MusteriOzellik extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;	
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public Musteri getMusteri() {

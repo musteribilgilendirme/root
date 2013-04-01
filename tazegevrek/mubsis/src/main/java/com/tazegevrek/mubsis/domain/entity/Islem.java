@@ -18,7 +18,7 @@ public class Islem extends PersistentObject {
 	@Column(name = "ACIKLAMA")
 	private String aciklama;
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public String getAciklama() {

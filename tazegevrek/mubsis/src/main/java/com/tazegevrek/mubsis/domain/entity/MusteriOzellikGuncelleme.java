@@ -52,7 +52,7 @@ public class MusteriOzellikGuncelleme extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;	
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public Date getIslemTarihi() {

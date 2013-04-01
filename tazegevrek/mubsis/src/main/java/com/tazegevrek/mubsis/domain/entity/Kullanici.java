@@ -43,7 +43,7 @@ public class Kullanici extends PersistentObject {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public String getKullaniciKodu() {

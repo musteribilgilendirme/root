@@ -28,7 +28,7 @@ public class MusteriEtiket extends PersistentObject {
 	@Column(name = "DEGER_SAYISI")
 	private String degerSayisi;
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public Sirket getSirket() {

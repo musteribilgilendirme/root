@@ -23,7 +23,7 @@ public class Il extends PersistentObject{
 	@Column(name = "AD")
 	private String ad;
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public String getAd() {

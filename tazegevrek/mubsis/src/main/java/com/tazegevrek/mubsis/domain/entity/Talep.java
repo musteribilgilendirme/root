@@ -28,7 +28,7 @@ public class Talep extends PersistentObject {
 	@Column(name = "ACIKLAMA")
 	private Long aciklama;
 
-	@Column(name = "TALEP_DURUMU_ID")
+	@Column(name = "TALEP_DURUMU")
 	private String talepDurumu;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -69,13 +69,13 @@ public class Talep extends PersistentObject {
 	@Column(name = "ONIZLEME_TUTARI")
 	private Long onizlemeBilgilendirmeTutari;
 
-	@Column(name = "TALEP_TIPI_ID")
+	@Column(name = "TALEP_TIPI")
 	private String talepTipi;
 
-	@Column(name = "SABLON_ID")
+	@Column(name = "SABLON")
 	private String sablon;
 
-	@Column(name = "SIRKET_ID")
+	@Column(name = "SIRKET")
 	private String sirket;
 
 	public Long getAdi() {

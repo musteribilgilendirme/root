@@ -32,7 +32,7 @@ public class Musteri extends PersistentObject {
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
-	@Column(name = "MUSTERI_DURUMU_ID")
+	@Column(name = "MUSTERI_DURUMU")
 	private String musteriDurumu;
 	
 	@Column(name = "TELEFON")
@@ -56,10 +56,10 @@ public class Musteri extends PersistentObject {
 	@Column(name = "DOGUM_TARIHI", nullable = false)
 	private Date dogumTarihi;
 	
-	@Column(name = "CINSIYET_ID")
+	@Column(name = "CINSIYET")
 	private String cinsiyeti;
 	
-	@Column(name = "MEDENI_HALI_ID")
+	@Column(name = "MEDENI_HALI")
 	private String medeniHali;
 	
 	@Column(name = "TC_KIMLIK_NO")

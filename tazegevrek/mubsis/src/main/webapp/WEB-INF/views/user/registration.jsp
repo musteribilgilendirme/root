@@ -10,69 +10,91 @@
 		<script src="<c:url value="/resources/js/unicorn.form_validation.js" />"></script>
         <script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
         
+    <s:url var = "registerFormUrl" value='/user/registration/register' />
+    <s:message var = "sampleGsmNo" code="label.sample.gsm.no"></s:message>
+     <s:message var = "veLbl" code="label.ve"></s:message>
+        
 	
 	<mubsis:loginpage>
 	
 	
 		<jsp:body>
 			
-		  <div id="loginbox" style="width: 800px">   
-		            <form id="loginform"  name="f" class="form-horizontal"  method="post" action="<c:url value='/user/dologin' />">
-						<c:if test="${empty error}">
-							<p>
-								<s:message code="label.enter.username.and.password" />
-							</p>
-						</c:if>
-						
-						<c:if test="${not empty error}"> 
-					        <p class="text-error">
-								${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-							</p>     		
-					   </c:if>     
-						 
+		  <div id="loginbox" style="width: 525px;height: 425px">    
+		   
+					
+		
+		     
+		            <form:form commandName="newUserDTO" action="${registerFormUrl}" cssClass="form-horizontal"  >
+							
+							<div class="widget-title">
+								<h3><s:message code="label.register.new.user" /></h3> 
+							</div>   
 							
 		                <div class="control-group">
-		                	<label class="control-label">Eposta:</label>
-		                    <div class="controls"> 
-		                           <input name="j_username" type="text" style="width: 500px"/>
+		                	<label class="control-label" > <s:message code="label.email.adress"/></label>
+		                    <div class="controls" style="text-align:left"> 
+		                          <form:input  path="email" /> <form:errors  path="email" cssClass="text-error" htmlEscape="true" /> 
 		                    </div>
 		                </div>
 		                
 		                <div class="control-group">
-		                	<label class="control-label">Sifre:</label>
-		                    <div class="controls"> 
-		                           <input name="j_username" type="text" style="width: 500px"/>
+		                	<label class="control-label"> <s:message code="label.password"/> </label>
+		                    <div class="controls" style="text-align:left">   
+		                          <form:password  path="password" /> <form:errors path="password" cssClass="text-error" htmlEscape="true" />
+		                    </div>
+		                </div>
+		                
+		            	<div class="control-group">
+		                	<label class="control-label"> <s:message code="label.re.password"/> </label>
+		                    <div class="controls" style="text-align:left"> 
+		                          <form:password  path="repassword" /> <form:errors path="repassword" cssClass="text-error" htmlEscape="false" />
 		                    </div>
 		                </div>
 		                
 		                <div class="control-group">
-		                	<label class="control-label">Sifre (Tekrar):</label>
-		                    <div class="controls"> 
-		                           <input name="j_username" type="text" style="width: 500px"/>
+		                	<label class="control-label"> <s:message code="label.gms.no"/> </label>
+		                    <div class="controls" style="text-align:left"> 
+		                          <form:input  path="gsmNo" placeholder="${sampleGsmNo}"/> <form:errors path="gsmNo" cssClass="text-error" />
 		                    </div>
 		                </div>
-
 		                
+		          		<div class="control-group">
+		                	<label class="control-label"> <s:message code="label.name"/> </label>
+		                    <div class="controls" style="text-align:left"> 
+		                          <form:input  path="name" /> <form:errors path="name" cssClass="text-error" />
+		                    </div>
+		                </div>
 		                
-		
+		                <div class="control-group">
+		                	<label class="control-label"> <s:message code="label.surname"/> </label>
+		                    <div class="controls" style="text-align:left"> 
+		                          <form:input  path="surname" /> <form:errors path="surname" cssClass="text-error" />
+		                    </div>
+		                </div> 
+		                
 		                <div class="form-actions">
-							<span class="pull-left">
-								<a href="<c:url value="/user/recover" />" style="font-size:14px" class="flip-link" id="to-recover"><s:message code="label.recover.password" /></a>
-								|
-								<a href="<c:url value="/user/registration" />" style="font-size:14px" class="flip-link" id="to-signup"><s:message code="label.sign.in" /></a>
-							</span> 
-		                    <span class="pull-right"><span style="margin-left: 20px"><input type="submit" class="btn btn-inverse" value="<s:message code="label.giris" />" /></span></span>
+							<span class="pull-left"><a href="<c:url value="/user/login" />" class="flip-link" id="to-login"><s:message code="label.login" /></a></span>
+							<span class="pull-right"><input type="submit" class="btn btn-inverse" value="<s:message code="label.send" />" /></span>
 		                </div>	
 		
 		                
-		            </form>
+		            </form:form>
 		        
 		        <script type='text/javascript'>
 		
 					
 					$("#to-recover").click(function() {
-						$('#loginbox').css({"height":"250px"});   
+						
 					});
+					
+					<c:if test="${not empty error}"> 
+						$(document).ready(function() {
+						    $('br').replaceWith(' ${veLbl} ');
+						    $('#loginbox').css({"width":"800px"});    
+						});   		
+			   		</c:if>  
+					
 								
 				</script> 
 			</div>

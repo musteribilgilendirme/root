@@ -27,10 +27,13 @@ public class TalepDetay extends PersistentObject {
 	@Column(name = "ISLEM_TARIHI", nullable = false)
 	private Date islemTarihi;
 
-	@Column(name = "TALEP_ID")
-	private String talep;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "TALEP_ID")
+	@Fetch(FetchMode.SELECT)
+	private Talep talep;
 
-	@Column(name = "BILDIRIM_TIPI_ID")
+	@Column(name = "BILDIRIM_TIPI")
 	private String bildirimTipi;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -51,10 +54,9 @@ public class TalepDetay extends PersistentObject {
 	@Column(name = "E")
 	private String ek;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "BILDIRIM_DURUMU_ID")
-	@Fetch(FetchMode.SELECT)
-	private Referans bildirimDurumu;
+
+	@Column(name = "BILDIRIM_DURUMU_ID")
+	private String bildirimDurumu;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "SIRKET_ID")
@@ -69,11 +71,11 @@ public class TalepDetay extends PersistentObject {
 		this.islemTarihi = islemTarihi;
 	}
 
-	public String getTalep() {
+	public Talep getTalep() {
 		return talep;
 	}
 
-	public void setTalep(String talep) {
+	public void setTalep(Talep talep) {
 		this.talep = talep;
 	}
 
@@ -117,11 +119,11 @@ public class TalepDetay extends PersistentObject {
 		this.ek = ek;
 	}
 
-	public Referans getBildirimDurumu() {
+	public String getBildirimDurumu() {
 		return bildirimDurumu;
 	}
 
-	public void setBildirimDurumu(Referans bildirimDurumu) {
+	public void setBildirimDurumu(String bildirimDurumu) {
 		this.bildirimDurumu = bildirimDurumu;
 	}
 

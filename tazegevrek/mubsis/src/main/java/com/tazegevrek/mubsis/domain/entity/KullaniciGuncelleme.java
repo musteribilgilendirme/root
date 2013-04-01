@@ -45,7 +45,7 @@ public class KullaniciGuncelleme extends PersistentObject {
 	private String soyad;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "SIRKET_ID")
+	@JoinColumn(name = "SIRKET")
 	@Fetch(FetchMode.SELECT)
 	private Sirket sirket;
 	
@@ -58,7 +58,7 @@ public class KullaniciGuncelleme extends PersistentObject {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@Column(name = "DURUM_ID")
+	@Column(name = "DURUM")
 	private String durum;
 
 	public Date getIslemTarihi() {
