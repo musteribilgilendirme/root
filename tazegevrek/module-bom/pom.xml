@@ -177,25 +177,25 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.21</version>
 		</dependency>
-		
-		<!-- Spring Security -->
-		 <dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-core</artifactId>
-		    <version>${org.springsecurity-version}</version>
-		 </dependency> 
-		 <dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-web</artifactId>
-		    <version>${org.springsecurity-version}</version>
-		  </dependency> 
-		  <dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-config</artifactId>
-		    <version>${org.springsecurity-version}</version>
-		  </dependency>
 
-		
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${org.springsecurity-version}</version>
+		</dependency>
+
+
 		<!-- ehcache -->
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
@@ -203,6 +203,19 @@
 			<version>2.7.0</version>
 		</dependency>
 
+		<!-- Activiti -->
+
+		<dependency>
+		  <groupId>org.activiti</groupId>
+		  <artifactId>activiti-engine</artifactId>
+		  <version>${activiti-version}
+		      </version>
+		</dependency>
+		<dependency>
+		  <groupId>org.activiti</groupId>
+		  <artifactId>activiti-spring</artifactId>
+		  <version>${activiti-version}</version>
+		</dependency>
 
 		<!-- Test -->
 		<dependency>

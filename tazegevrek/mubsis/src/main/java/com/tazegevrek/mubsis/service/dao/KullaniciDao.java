@@ -19,7 +19,7 @@ public class KullaniciDao extends GenericDao<Kullanici> {
 		return Kullanici.class;
 	}
 
-	public Kullanici kullaniciSorgula(String kullaniciKodu) {
+	public Kullanici kullaniciSorgula(String kullaniciKodu) { 
 		
 		Criteria criteria = getSession().createCriteria(Kullanici.class,"k");
 		criteria.add(Restrictions.eq("k.kullaniciKodu", kullaniciKodu));
