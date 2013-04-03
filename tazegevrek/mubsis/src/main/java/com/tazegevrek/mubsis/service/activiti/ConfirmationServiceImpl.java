@@ -53,7 +53,7 @@ public class ConfirmationServiceImpl implements ConfirmationService {
 	@Override
 	public void confirmAsycConfirmation(String bussinessKey) {
 		ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(bussinessKey).singleResult();
-		runtimeService.signal(instance.getId());
+		runtimeService.signalEventReceived("confirmSignal", instance.getProcessInstanceId());
 	}
 	
 }

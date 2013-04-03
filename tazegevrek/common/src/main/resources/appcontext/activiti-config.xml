@@ -14,17 +14,17 @@
 	<beans:bean id="processEngineConfiguration"
 		class="org.activiti.spring.SpringProcessEngineConfiguration">
 		<beans:property name="databaseType" value="mysql" />
-		<beans:property name="dataSource" value="mysql" />
-		<property name="transactionManager" ref="transactionManager" />
-		<property name="databaseSchemaUpdate" value="true" />
-		<property name="jobExecutorActivate" value="false" />
-		<property name="deploymentResources"
-			value="classpath*:autodeploy/*.xml" />
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="transactionManager" ref="transactionManager" />
+		<beans:property name="databaseSchemaUpdate" value="true" />
+		<beans:property name="jobExecutorActivate" value="false" />
+		<beans:property name="deploymentResources"
+			value="classpath*:autodeploy/*.bpmn20.xml" />
 	</beans:bean>
  
 	<beans:bean id="processEngine"
 		class="org.activiti.spring.ProcessEngineFactoryBean">
-		<property name="processEngineConfiguration" ref="processEngineConfiguration" />
+		<beans:property name="processEngineConfiguration" ref="processEngineConfiguration" />
 	</beans:bean>
 
 	<beans:bean id="repositoryService" factory-bean="processEngine"

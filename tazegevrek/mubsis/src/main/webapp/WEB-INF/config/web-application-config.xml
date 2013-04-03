@@ -14,6 +14,7 @@
 	<import resource="webmvc-config.xml"/>
 	<import resource="classpath:appcontext/locale-config.xml"/>
 	<import resource="security-config.xml"/>
+	<import resource="classpath:appcontext/activiti-config.xml"/>
 
 
  

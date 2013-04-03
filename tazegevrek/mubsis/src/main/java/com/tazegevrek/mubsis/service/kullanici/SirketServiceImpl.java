@@ -10,7 +10,7 @@ import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Sirket;
 import com.tazegevrek.mubsis.service.dao.SirketDao;
 
-@Service(value="kullaniciService")
+@Service(value="sirketService")
 public class SirketServiceImpl implements SirketService{
  
 	@Autowired

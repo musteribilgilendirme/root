@@ -89,7 +89,7 @@ public class UserController {
 		return "user/registration";
 	}
 
-	@RequestMapping(value = "/registration/register/${validationId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/registration/register/{validationId}", method = RequestMethod.GET)
 	public String confirmUser(@PathVariable String validationId, Model model) {
 
 		try {

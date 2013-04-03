@@ -27,10 +27,8 @@ public class NewUserDTO implements Serializable{
 	@Size(min=8, max=25)
 	private String repassword;
 	
-	@Min(20)
 	@NotNull
-	@NumberFormat(style=Style.NUMBER)
-	private Integer gsmNo;
+	private Long gsmNo;
 	
 	@NotEmpty
 	@Size(min=2, max=25)
@@ -64,11 +62,11 @@ public class NewUserDTO implements Serializable{
 		this.repassword = repassword;
 	}
 
-	public Integer getGsmNo() {
+	public Long getGsmNo() {
 		return gsmNo;
 	}
 
-	public void setGsmNo(Integer gsmNo) {
+	public void setGsmNo(Long gsmNo) {
 		this.gsmNo = gsmNo;
 	}
 

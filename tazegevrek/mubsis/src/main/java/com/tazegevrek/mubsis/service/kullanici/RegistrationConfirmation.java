@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
@@ -23,7 +23,7 @@ public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {
 	private String SURNAME = "SURNAME";
 	
 	@Autowired
-	private PasswordEncoder passwordEncoder;
+	private Md5PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private KullaniciService kullaniciService;
@@ -43,7 +43,7 @@ public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {
 		Map<String, Object> vars = new HashMap<String, Object>();	
 		vars.put(EMAIL, dto.getEmail());
 		vars.put(GSM,dto.getGsmNo());
-		String encodedPassword = passwordEncoder.encode(dto.getPassword());
+		String encodedPassword = passwordEncoder.encodePassword(dto.getPassword(),null);
 		vars.put(PASSWORD,encodedPassword);
 		vars.put(NAME,dto.getName());
 		vars.put(SURNAME,dto.getSurname());
@@ -54,7 +54,7 @@ public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {
 	public NewUserDTO map2dto(Map<String, Object> vars) {
 		NewUserDTO dto = new NewUserDTO();
 		dto.setEmail(vars.get(EMAIL).toString());
-		dto.setGsmNo((Integer)vars.get(GSM));
+		dto.setGsmNo((Long)vars.get(GSM));
 		dto.setPassword(vars.get(PASSWORD).toString());
 		dto.setName(vars.get(NAME).toString());
 		dto.setSurname(vars.get(SURNAME).toString());
