@@ -63,6 +63,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency> 
+		<dependency>
+			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
@@ -206,15 +211,15 @@
 		<!-- Activiti -->
 
 		<dependency>
-		  <groupId>org.activiti</groupId>
-		  <artifactId>activiti-engine</artifactId>
-		  <version>${activiti-version}
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>${activiti-version}
 		      </version>
 		</dependency>
 		<dependency>
-		  <groupId>org.activiti</groupId>
-		  <artifactId>activiti-spring</artifactId>
-		  <version>${activiti-version}</version>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>${activiti-version}</version>
 		</dependency>
 
 		<!-- Test -->
