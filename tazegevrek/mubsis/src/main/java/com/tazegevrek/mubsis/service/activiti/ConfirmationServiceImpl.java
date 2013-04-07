@@ -1,9 +1,11 @@
 package com.tazegevrek.mubsis.service.activiti;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import org.activiti.engine.RuntimeService;
+import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -23,7 +25,8 @@ public class ConfirmationServiceImpl implements ConfirmationService {
 	@Autowired
 	private ApplicationContext applicationContext;
 
-
+	
+	@Override
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=false)
 	public void confirmTask(Map<String, Object> vars){
 		String beanName = (String)vars.get(SERVICE_NAME);
@@ -32,6 +35,7 @@ public class ConfirmationServiceImpl implements ConfirmationService {
 		asyConfirmation.confirm(dto);
 	}
 	
+	@Override
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=false)
 	public void timeoutTask(Map<String, Object> vars){
 		String beanName = (String)vars.get(SERVICE_NAME);
@@ -52,8 +56,9 @@ public class ConfirmationServiceImpl implements ConfirmationService {
 
 	@Override
 	public void confirmAsycConfirmation(String bussinessKey) {
-		ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(bussinessKey).singleResult();
-		runtimeService.signalEventReceived("confirmSignal", instance.getProcessInstanceId());
+		ProcessInstance procInst = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(bussinessKey).singleResult();
+		List<Execution> executionList = runtimeService.createExecutionQuery().processInstanceId(procInst.getId()).signalEventSubscriptionName("alertSignal").list();
+		runtimeService.signalEventReceived("alertSignal", executionList.get(0).getId());
 	}
 	
 }

@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +20,7 @@ import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
 import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
 import com.tazegevrek.mubsis.service.dao.KullaniciDao;
+import com.tazegevrek.mubsis.service.kullanici.KullaniciService;
 import com.tazegevrek.mubsis.service.kullanici.RegistrationConfirmation;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -43,6 +45,9 @@ public class TestKullaniciIslemleri extends AbstractTest {
 	@Autowired
 	private RuntimeService runtimeService;
 	
+	@Autowired
+	private KullaniciService kullaniciService;
+	
 	
 	@Test
 	@Transactional(propagation=Propagation.SUPPORTS,readOnly=false)
@@ -59,11 +64,31 @@ public class TestKullaniciIslemleri extends AbstractTest {
 	
 	@Test
 	@Transactional(propagation=Propagation.SUPPORTS,readOnly=false)
+	@Rollback(value=true)
+	public void createUserTest(){
+		NewUserDTO newUser = new NewUserDTO();
+		newUser.setEmail("createUserTest@gmail.com");
+		newUser.setGsmNo(123l);
+		newUser.setName("Create User Test");
+		newUser.setPassword(passwordEncoder.encodePassword("123456", null));
+		newUser.setName("Create User");
+		newUser.setSurname("Test");
+		
+		kullaniciService.kullaniciOlustur(newUser);
+		
+		Kullanici kullanici = kullaniciDao.kullaniciSorgula(newUser.getEmail());
+		
+		Assert.assertNotNull(kullanici);
+	}
+	
+	@Test
+	@Transactional(propagation=Propagation.SUPPORTS,readOnly=false)
+	@Rollback(value=true)
 	public void userRegistrationTest(){
 		
 		NewUserDTO newUser = new NewUserDTO();
 		newUser.setEmail("dummy1@gmail.com");
-		newUser.setGsmNo(5053367649l);
+		newUser.setGsmNo(3367649l);
 		newUser.setName("Test");
 		newUser.setPassword(passwordEncoder.encodePassword("123456", null));
 		newUser.setName("Unit");
@@ -83,6 +108,8 @@ public class TestKullaniciIslemleri extends AbstractTest {
 		Assert.assertNotNull(kullanici);
 		
 	}
+	
+	
 	
 
 	

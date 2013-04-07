@@ -20,6 +20,7 @@
 		<beans:property name="jobExecutorActivate" value="false" />
 		<beans:property name="deploymentResources"
 			value="classpath*:autodeploy/*.bpmn20.xml" />
+		<beans:property name="history" value="full" />
 	</beans:bean>
  
 	<beans:bean id="processEngine"
