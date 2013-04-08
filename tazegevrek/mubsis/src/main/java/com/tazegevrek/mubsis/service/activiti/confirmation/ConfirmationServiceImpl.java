@@ -55,11 +55,12 @@ public class ConfirmationServiceImpl implements ConfirmationService {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.SUPPORTS,readOnly=true)
 	public void confirmAsycConfirmation(String bussinessKey) {
 		ProcessInstance procInst = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(bussinessKey).singleResult();
 		
 		boolean isConfirmationProcess = procInst.getProcessDefinitionId().contains(VALIDATION_PROCESS_DEF_ID);
-		if(isConfirmationProcess){
+		if(!isConfirmationProcess){
 			throw new InvalidValidationProcess();
 		}
 		
