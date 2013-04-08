@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService, UserDetailsService{
 	public UserDetails loadUserByUsername(String kullaniciKodu)
 			throws UsernameNotFoundException {
 		
-		Kullanici kullanici = kullaniciDao.kullaniciSorgula(kullaniciKodu);
+		Kullanici kullanici = kullaniciDao.findUser(kullaniciKodu);
 		
 		if(kullanici == null){
 			throw new UsernameNotFoundException(kullaniciKodu);

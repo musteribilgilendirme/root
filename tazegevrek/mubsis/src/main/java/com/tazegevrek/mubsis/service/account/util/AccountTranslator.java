@@ -53,7 +53,7 @@ public class AccountTranslator {
 	public NewUserDTO map2newUserDto(Map<String, Object> vars) {
 		NewUserDTO dto = new NewUserDTO();
 		dto.setEmail(vars.get(EMAIL).toString());
-		dto.setGsmNo((Long)vars.get(GSM));
+		dto.setGsmNo((String)vars.get(GSM));
 		dto.setPassword(vars.get(PASSWORD).toString());
 		dto.setName(vars.get(NAME).toString());
 		dto.setSurname(vars.get(SURNAME).toString());

@@ -19,10 +19,10 @@ public class UserDao extends GenericDao<Kullanici> {
 		return Kullanici.class;
 	}
 
-	public Kullanici kullaniciSorgula(String kullaniciKodu) { 
+	public Kullanici findUser(String username) { 
 		
 		Criteria criteria = getSession().createCriteria(Kullanici.class,"k");
-		criteria.add(Restrictions.eq("k.kullaniciKodu", kullaniciKodu));
+		criteria.add(Restrictions.eq("k.kullaniciKodu", username));
 		criteria.add(Restrictions.ne("k.durum", DurumEnum.MANTIKSAL_SILINMIS.getValue()));
 		
 		List<Kullanici> resultList = criteria.list();

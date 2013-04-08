@@ -15,6 +15,7 @@ import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.dto.UserRecoveryDTO;
 import com.tazegevrek.mubsis.service.account.util.RegistrationConfirmation;
 import com.tazegevrek.mubsis.service.activiti.confirmation.ConfirmationService;
+import com.tazegevrek.mubsis.web.validator.NewUserValidator;
 
 @Controller
 @RequestMapping("/user")
@@ -27,6 +28,9 @@ public class UserController {
 
 	@Autowired
 	private RegistrationConfirmation registrationConfirmation;
+	
+	@Autowired
+	private NewUserValidator newUserValidator;
 
 	@RequestMapping(value = "/login")
 	public String login(Model model) {
@@ -66,6 +70,9 @@ public class UserController {
 	@RequestMapping(value = "/registration/register", method = RequestMethod.POST)
 	public String addNewUser(@Valid NewUserDTO newUser, BindingResult result,
 			Model model) {
+		
+		newUserValidator.validate(newUser, result);
+		
 		if (result.hasErrors()) {
 			model.addAttribute("error", "true");
 			return "user/registration";

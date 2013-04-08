@@ -52,7 +52,7 @@ public class TestAccountModule extends AbstractTest {
 	@Test
 	@Transactional(propagation=Propagation.SUPPORTS,readOnly=false)
 	public void testKullaniciSorgulama(){
-		Kullanici kullanici = kullaniciDao.kullaniciSorgula("eren");		
+		Kullanici kullanici = kullaniciDao.findUser("eren");		
 		Assert.assertNull(kullanici);			
 	}
 	
@@ -76,7 +76,7 @@ public class TestAccountModule extends AbstractTest {
 		
 		kullaniciService.kullaniciOlustur(newUser);
 		
-		Kullanici kullanici = kullaniciDao.kullaniciSorgula(newUser.getEmail());
+		Kullanici kullanici = kullaniciDao.findUser(newUser.getEmail());
 		
 		Assert.assertNotNull(kullanici);
 	}
@@ -103,7 +103,7 @@ public class TestAccountModule extends AbstractTest {
 		
 		confirmationService.confirmAsycConfirmation(bussinessKey);
 		
-		Kullanici kullanici = kullaniciDao.kullaniciSorgula(newUser.getEmail());
+		Kullanici kullanici = kullaniciDao.findUser(newUser.getEmail());
 		
 		Assert.assertNotNull(kullanici);
 		
