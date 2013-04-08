@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.kullanici.util;
+package com.tazegevrek.mubsis.service.account.util;
 
 import java.util.Map;
 
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
+import com.tazegevrek.mubsis.service.account.service.UserService;
 import com.tazegevrek.mubsis.service.activiti.AsycConfirmation;
-import com.tazegevrek.mubsis.service.kullanici.service.KullaniciService;
 
 @Service(value="registrationConfirmation")
 public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {
@@ -16,10 +16,10 @@ public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {
 	private Logger logger = Logger.getLogger(RegistrationConfirmation.class);
 
 	@Autowired
-	private KullaniciTranslator kullaniciTranslator;
+	private AccountTranslator kullaniciTranslator;
 	
 	@Autowired
-	private KullaniciService kullaniciService;
+	private UserService kullaniciService;
 	
 	@Override
 	public void timeout(NewUserDTO dto) {

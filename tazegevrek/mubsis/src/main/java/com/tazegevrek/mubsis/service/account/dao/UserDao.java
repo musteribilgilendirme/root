@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.kullanici.dao;
+package com.tazegevrek.mubsis.service.account.dao;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.tazegevrek.mubsis.domain.constant.DurumEnum;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
 
 @Repository
-public class KullaniciDao extends GenericDao<Kullanici> {
+public class UserDao extends GenericDao<Kullanici> {
 
 	@Override
 	public Class<Kullanici> getEntityClass() {

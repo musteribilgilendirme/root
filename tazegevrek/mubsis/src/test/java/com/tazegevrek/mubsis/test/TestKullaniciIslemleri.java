@@ -18,10 +18,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
+import com.tazegevrek.mubsis.service.account.dao.UserDao;
+import com.tazegevrek.mubsis.service.account.service.UserService;
+import com.tazegevrek.mubsis.service.account.util.RegistrationConfirmation;
 import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
-import com.tazegevrek.mubsis.service.kullanici.dao.KullaniciDao;
-import com.tazegevrek.mubsis.service.kullanici.service.KullaniciService;
-import com.tazegevrek.mubsis.service.kullanici.util.RegistrationConfirmation;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:appcontext/mubsis-test-config.xml"})
@@ -31,7 +31,7 @@ public class TestKullaniciIslemleri extends AbstractTest {
 	private Logger logger = Logger.getLogger(TestKullaniciIslemleri.class);
 	
 	@Autowired
-	private KullaniciDao kullaniciDao;
+	private UserDao kullaniciDao;
 	
 	@Autowired
 	private ConfirmationService confirmationService;
@@ -46,7 +46,7 @@ public class TestKullaniciIslemleri extends AbstractTest {
 	private RuntimeService runtimeService;
 	
 	@Autowired
-	private KullaniciService kullaniciService;
+	private UserService kullaniciService;
 	
 	
 	@Test

@@ -1,8 +1,8 @@
-package com.tazegevrek.mubsis.service.kullanici.service;
+package com.tazegevrek.mubsis.service.account.service;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 
-public interface KullaniciService {
+public interface UserService {
 
 	void kullaniciOlustur(NewUserDTO dto);
 

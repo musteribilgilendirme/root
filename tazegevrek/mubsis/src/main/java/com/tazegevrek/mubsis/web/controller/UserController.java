@@ -6,28 +6,21 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.dto.UserRecoveryDTO;
-import com.tazegevrek.mubsis.service.activiti.AsycConfirmation;
+import com.tazegevrek.mubsis.service.account.util.RegistrationConfirmation;
 import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
-import com.tazegevrek.mubsis.service.kullanici.service.KullaniciService;
-import com.tazegevrek.mubsis.service.kullanici.util.RegistrationConfirmation;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
 	private Logger logger = Logger.getLogger(UserController.class);
-
-	@Autowired
-	private KullaniciService kullaniciService;
 
 	@Autowired
 	private ConfirmationService confirmationService;

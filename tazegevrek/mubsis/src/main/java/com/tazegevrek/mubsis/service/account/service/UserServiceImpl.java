@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.kullanici.service;
+package com.tazegevrek.mubsis.service.account.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,20 +14,20 @@ import com.tazegevrek.mubsis.domain.constant.RolEnum;
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
 import com.tazegevrek.mubsis.domain.entity.Sirket;
-import com.tazegevrek.mubsis.service.kullanici.dao.KullaniciDao;
-import com.tazegevrek.mubsis.service.kullanici.util.KullaniciTranslator;
+import com.tazegevrek.mubsis.service.account.dao.UserDao;
+import com.tazegevrek.mubsis.service.account.util.AccountTranslator;
 
 @Service(value="kullaniciService")
-public class KullaniciServiceImpl implements KullaniciService, UserDetailsService{
+public class UserServiceImpl implements UserService, UserDetailsService{
 
 	@Autowired
-	private KullaniciDao kullaniciDao;
+	private UserDao kullaniciDao;
 	
 	@Autowired
-	private SirketService sirketService;
+	private CompanyService sirketService;
 	
 	@Autowired
-	private KullaniciTranslator kullaniciTranslator;
+	private AccountTranslator kullaniciTranslator;
 	
 	@Override
 	@Transactional(propagation=Propagation.SUPPORTS,readOnly=true)

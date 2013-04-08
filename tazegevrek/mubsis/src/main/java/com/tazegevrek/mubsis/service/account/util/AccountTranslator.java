@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.kullanici.util;
+package com.tazegevrek.mubsis.service.account.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import com.tazegevrek.mubsis.domain.entity.Kullanici;
 
 
 @Service
-public class KullaniciTranslator {
+public class AccountTranslator {
 	
 	private String EMAIL = "EMAIL";
 	private String GSM = "GSM";
