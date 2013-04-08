@@ -57,6 +57,13 @@ public class ConfirmationServiceImpl implements ConfirmationService {
 	@Override
 	public void confirmAsycConfirmation(String bussinessKey) {
 		ProcessInstance procInst = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(bussinessKey).singleResult();
+		
+		boolean isConfirmationProcess = procInst.getProcessDefinitionId().contains(VALIDATION_PROCESS_DEF_ID);
+		if(isConfirmationProcess){
+			throw new InvalidValidationProcess();
+		}
+		
+		System.out.println(procInst.getProcessDefinitionId());
 		List<Execution> executionList = runtimeService.createExecutionQuery().processInstanceId(procInst.getId()).signalEventSubscriptionName("alertSignal").list();
 		runtimeService.signalEventReceived("alertSignal", executionList.get(0).getId());
 	}

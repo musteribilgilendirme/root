@@ -68,7 +68,7 @@ public class TestAccountModule extends AbstractTest {
 	public void createUserTest(){
 		NewUserDTO newUser = new NewUserDTO();
 		newUser.setEmail("createUserTest@gmail.com");
-		newUser.setGsmNo(123l);
+		newUser.setGsmNo("3123367649");
 		newUser.setName("Create User Test");
 		newUser.setPassword(passwordEncoder.encodePassword("123456", null));
 		newUser.setName("Create User");
@@ -88,7 +88,7 @@ public class TestAccountModule extends AbstractTest {
 		
 		NewUserDTO newUser = new NewUserDTO();
 		newUser.setEmail("dummy1@gmail.com");
-		newUser.setGsmNo(3367649l);
+		newUser.setGsmNo("3123367649");
 		newUser.setName("Test");
 		newUser.setPassword(passwordEncoder.encodePassword("123456", null));
 		newUser.setName("Unit");
