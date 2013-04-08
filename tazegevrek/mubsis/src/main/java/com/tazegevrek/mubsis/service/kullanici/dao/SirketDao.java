@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.dao;
+package com.tazegevrek.mubsis.service.kullanici.dao;
 
 import org.springframework.stereotype.Repository;
 

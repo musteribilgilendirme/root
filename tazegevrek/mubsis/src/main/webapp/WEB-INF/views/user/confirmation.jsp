@@ -21,7 +21,7 @@
 	<jsp:body>
 			
 			
-		<c:if test="${empty success}">	
+		<c:if test="${not empty success}">	
 		 
 		 		 	<div id="loginbox" style="height: 160px"> 
 		 		  <form:form commandName="newUserDTO" action="${registerFormUrl}"
@@ -43,8 +43,8 @@
 		
 		</c:if>
 		
-		 <c:if test="${not empty success}">
-		 	<div id="loginbox" style="height: 160px"> 
+		 <c:if test="${	empty success}">
+		 	<div id="loginbox" style="height: 130px"> 
 		 		  <form:form commandName="newUserDTO" action="${registerFormUrl}"
 					cssClass="form-vertical">
                   	<p>

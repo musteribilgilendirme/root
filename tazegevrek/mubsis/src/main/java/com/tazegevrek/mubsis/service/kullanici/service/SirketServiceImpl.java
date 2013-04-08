@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.kullanici;
+package com.tazegevrek.mubsis.service.kullanici.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tazegevrek.mubsis.domain.constant.SirketTuruEnum;
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Sirket;
-import com.tazegevrek.mubsis.service.dao.SirketDao;
+import com.tazegevrek.mubsis.service.kullanici.dao.SirketDao;
 
 @Service(value="sirketService")
 public class SirketServiceImpl implements SirketService{

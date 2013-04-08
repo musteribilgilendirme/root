@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.kullanici;
+package com.tazegevrek.mubsis.service.kullanici.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,8 @@ import com.tazegevrek.mubsis.domain.constant.RolEnum;
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
 import com.tazegevrek.mubsis.domain.entity.Sirket;
-import com.tazegevrek.mubsis.service.dao.KullaniciDao;
+import com.tazegevrek.mubsis.service.kullanici.dao.KullaniciDao;
+import com.tazegevrek.mubsis.service.kullanici.util.KullaniciTranslator;
 
 @Service(value="kullaniciService")
 public class KullaniciServiceImpl implements KullaniciService, UserDetailsService{
@@ -24,6 +25,9 @@ public class KullaniciServiceImpl implements KullaniciService, UserDetailsServic
 	
 	@Autowired
 	private SirketService sirketService;
+	
+	@Autowired
+	private KullaniciTranslator kullaniciTranslator;
 	
 	@Override
 	@Transactional(propagation=Propagation.SUPPORTS,readOnly=true)
@@ -36,7 +40,7 @@ public class KullaniciServiceImpl implements KullaniciService, UserDetailsServic
 			throw new UsernameNotFoundException(kullaniciKodu);
 		}
 		
-		KullaniciDetay kullaniciDetay = KullaniciServiceTranslator.kullanici2KullaniciDetay(kullanici);
+		KullaniciDetay kullaniciDetay = kullaniciTranslator.kullanici2KullaniciDetay(kullanici);
 		
 		return kullaniciDetay;
 	}

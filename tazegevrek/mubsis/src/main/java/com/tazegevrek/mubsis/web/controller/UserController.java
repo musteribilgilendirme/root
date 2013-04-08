@@ -17,8 +17,8 @@ import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.dto.UserRecoveryDTO;
 import com.tazegevrek.mubsis.service.activiti.AsycConfirmation;
 import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
-import com.tazegevrek.mubsis.service.kullanici.KullaniciService;
-import com.tazegevrek.mubsis.service.kullanici.RegistrationConfirmation;
+import com.tazegevrek.mubsis.service.kullanici.service.KullaniciService;
+import com.tazegevrek.mubsis.service.kullanici.util.RegistrationConfirmation;
 
 @Controller
 @RequestMapping("/user")

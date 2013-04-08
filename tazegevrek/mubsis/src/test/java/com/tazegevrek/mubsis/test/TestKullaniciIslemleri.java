@@ -19,9 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
 import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
-import com.tazegevrek.mubsis.service.dao.KullaniciDao;
-import com.tazegevrek.mubsis.service.kullanici.KullaniciService;
-import com.tazegevrek.mubsis.service.kullanici.RegistrationConfirmation;
+import com.tazegevrek.mubsis.service.kullanici.dao.KullaniciDao;
+import com.tazegevrek.mubsis.service.kullanici.service.KullaniciService;
+import com.tazegevrek.mubsis.service.kullanici.util.RegistrationConfirmation;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:appcontext/mubsis-test-config.xml"})
