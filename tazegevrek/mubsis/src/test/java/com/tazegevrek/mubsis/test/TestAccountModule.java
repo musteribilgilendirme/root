@@ -21,14 +21,14 @@ import com.tazegevrek.mubsis.domain.entity.Kullanici;
 import com.tazegevrek.mubsis.service.account.dao.UserDao;
 import com.tazegevrek.mubsis.service.account.service.UserService;
 import com.tazegevrek.mubsis.service.account.util.RegistrationConfirmation;
-import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
+import com.tazegevrek.mubsis.service.activiti.confirmation.ConfirmationService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:appcontext/mubsis-test-config.xml"})
 @Component
-public class TestKullaniciIslemleri extends AbstractTest {
+public class TestAccountModule extends AbstractTest {
 
-	private Logger logger = Logger.getLogger(TestKullaniciIslemleri.class);
+	private Logger logger = Logger.getLogger(TestAccountModule.class);
 	
 	@Autowired
 	private UserDao kullaniciDao;

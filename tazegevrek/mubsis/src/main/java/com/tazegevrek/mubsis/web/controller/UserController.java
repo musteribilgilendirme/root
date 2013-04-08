@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.dto.UserRecoveryDTO;
 import com.tazegevrek.mubsis.service.account.util.RegistrationConfirmation;
-import com.tazegevrek.mubsis.service.activiti.ConfirmationService;
+import com.tazegevrek.mubsis.service.activiti.confirmation.ConfirmationService;
 
 @Controller
 @RequestMapping("/user")

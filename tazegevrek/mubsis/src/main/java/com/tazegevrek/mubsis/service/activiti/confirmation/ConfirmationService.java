@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.activiti;
+package com.tazegevrek.mubsis.service.activiti.confirmation;
 
 import java.util.Map;
 

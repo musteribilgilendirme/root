@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tazegevrek.mubsis.domain.constant.CinsiyetEnum;
 import com.tazegevrek.mubsis.domain.entity.Musteri;
 import com.tazegevrek.mubsis.domain.entity.Referans;
+import com.tazegevrek.mubsis.service.common.dao.ReferansDao;
 import com.tazegevrek.mubsis.service.customer.dao.CustomerDao;
-import com.tazegevrek.mubsis.service.dao.ReferansDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:appcontext/mubsis-test-config.xml"})

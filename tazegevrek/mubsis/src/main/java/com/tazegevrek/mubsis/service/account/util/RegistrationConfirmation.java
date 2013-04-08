@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.service.account.service.UserService;
-import com.tazegevrek.mubsis.service.activiti.AsycConfirmation;
+import com.tazegevrek.mubsis.service.activiti.confirmation.AsycConfirmation;
 
 @Service(value="registrationConfirmation")
 public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {

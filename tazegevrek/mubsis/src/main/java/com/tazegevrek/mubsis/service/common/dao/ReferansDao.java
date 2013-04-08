@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.dao;
+package com.tazegevrek.mubsis.service.common.dao;
 
 import java.util.List;
 
