@@ -1,10 +1,19 @@
 <%@ tag language="java" description="GenericPage" pageEncoding="UTF-8"%>
 <%@ attribute name="top" fragment="true"%>
 <%@ attribute name="breadcrumb" fragment="true"%>
+<%@ attribute name="selectedMenu" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
 
 <html>
+
+	<s:url var = "customerHomeUrl" value='/secure/customer/list' />
+	<s:url var = "homeUrl" value='/secure/home' />
+	<s:message var="lblMainPage" code="label.main.page" />
+	<s:message var="lblCustomerList" code="label.customer.list" />
+	<s:message var="lblCustomer" code="label.customer" />
+	<s:message var="lblGoToHome" code="label.go.to.home" />
+	<s:message var="lblHomePage" code="label.main.page" />
 
 <header>
 
@@ -59,19 +68,19 @@
 	</div>
 
 	<div id="sidebar">
-		<a href="#" class="visible-phone"><i class="icon icon-home"></i>
-		<s:message code="label.main.page" /></a>
+		<a href="${homeUrl}" class="visible-phone"><i class="icon icon-home"></i>${lblMainPage}</a>
 		<ul>
-			<li class="active"><a href="index.html"><i
-					class="icon icon-home"></i> <span><s:message
-							code="label.main.page" /></span></a></li>
-			<li><a href="customer"><i class="icon icon-user"></i> <span><s:message
-							code="label.customers" /></span></a></li>
-			<li><a href="demand"><i class="icon icon-time"></i> <span><s:message
+			<li class="${selectedMenu eq 'HOME' ? 'active' : ''}"><a href="${homeUrl}"><i class="icon icon-home"></i><span>${lblMainPage}</span></a></li>
+			
+			
+			<li class="${selectedMenu eq 'CUSTOMER' ? 'active' : ''}" ><a href="${customerHomeUrl}"><i class="icon icon-user"></i><span>${lblCustomer}</span></a></li>
+			
+			
+			<li class="${selectedMenu eq 'DEMAND' ? 'active' : ''}"><a href="demand"><i class="icon icon-time"></i> <span><s:message
 							code="label.demand" /></span></a></li>
-			<li><a href="calenar"><i class="icon icon-calendar"></i> <span><s:message
+			<li class="${selectedMenu eq 'CALENDAR' ? 'active' : ''}"><a href="calenar"><i class="icon icon-calendar"></i> <span><s:message
 							code="label.calendar" /></span></a></li>
-			<li><a href="transaction"><i class="icon icon-list"></i> <span><s:message
+			<li class="${selectedMenu eq 'TRANSACTIONS' ? 'active' : ''}"><a href="transaction"><i class="icon icon-list"></i> <span><s:message
 							code="label.transactions" /></span></a></li>
 		</ul>
 
@@ -92,7 +101,7 @@
 		<div class="container-fluid">	 
 			<div class="row-fluid">
 				<div id="footer" class="span12">
-					2013 &copy; <a href="#"><s:message code="label.batch.message" /></a>
+					2013 &copy; <a href="#"><s:message code="label.batch.message" /></a> 
 				</div>
 			</div>
 		</div>

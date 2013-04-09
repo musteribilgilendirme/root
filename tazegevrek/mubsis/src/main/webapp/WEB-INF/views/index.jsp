@@ -9,6 +9,8 @@
 
 <mubsis:genericpage>
 
+	<jsp:attribute name="selectedMenu">HOME</jsp:attribute>
+
 	<jsp:attribute name="top">
 			<h1>
 				<s:message code="label.main.page" />
