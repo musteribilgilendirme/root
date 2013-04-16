@@ -454,6 +454,15 @@ a:hover {
 .quick-actions i.icon-people {
 	background-image: url('../img/icons/32/people.png');
 }
+.quick-actions i.icon-customers {
+	background-image: url('../img/icons/32/customers.png');
+}
+.quick-actions i.icon-useradd {
+	background-image: url('../img/icons/32/useradd.png');
+}
+.quick-actions i.icon-usercard {
+	background-image: url('../img/icons/32/usercard.png');
+}
 .quick-actions i.icon-piechart {
 	background-image: url('../img/icons/32/piechart.png');
 }
@@ -538,6 +547,15 @@ a:hover {
 }
 .quick-actions-horizontal i.icon-web {
 	background-image: url('../img/icons/16/web.png');
+}
+.quick-actions-horizontal i.icon-customers {
+	background-image: url('../img/icons/16/customers.png');
+}
+.quick-actions-horizontal i.icon-useradd {
+	background-image: url('../img/icons/16/useradd.png');
+}
+.quick-actions-horizontal i.icon-usercard {
+	background-image: url('../img/icons/16/usercard.png');
 }
 
 .stat-boxes li:hover, .quick-actions li:hover, .quick-actions-horizontal li:hover  {

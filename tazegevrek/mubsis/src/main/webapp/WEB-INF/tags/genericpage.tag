@@ -31,6 +31,13 @@
 	<link rel="stylesheet"
 		href="<c:url value="/resources/css/unicorn.grey.css" />"
 		class="skin-color" />
+	<link rel="stylesheet"
+		href="<c:url value="/resources/css/jquery.gritter.css" />" />
+	<link rel="stylesheet"
+		href="<c:url value="/resources/css/jquery-ui.css" />" />
+		
+ 
+
 
 </header>
 
@@ -123,8 +130,10 @@
 	<script src="<c:url value="/resources/js/unicorn.js" />"></script>
 	<script src="<c:url value="/resources/js/unicorn.dashboard.js" />"></script>
 	<script src="<c:url value="/resources/js/unicorn.form_validation.js" />"></script>
-   <script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
-
+    <script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.gritter.min.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.peity.min.js" />"></script>
+    <script src="<c:url value="/resources/js/unicorn.interface.js" />"></script>
 
 
 
