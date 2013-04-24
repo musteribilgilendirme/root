@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.account.service;
+package com.tazegevrek.mubsis.service.account.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,13 +18,13 @@ import com.tazegevrek.mubsis.service.account.dao.UserDao;
 import com.tazegevrek.mubsis.service.account.util.AccountTranslator;
 
 @Service(value="kullaniciService")
-public class UserServiceImpl implements UserService, UserDetailsService{
+public class UserManagerImpl implements UserManager, UserDetailsService{
 
 	@Autowired
 	private UserDao kullaniciDao;
 	
 	@Autowired
-	private CompanyService sirketService;
+	private CompanyManager sirketService;
 	
 	@Autowired
 	private AccountTranslator kullaniciTranslator;

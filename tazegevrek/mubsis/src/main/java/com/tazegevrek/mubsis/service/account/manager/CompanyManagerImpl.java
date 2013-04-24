@@ -1,4 +1,4 @@
-package com.tazegevrek.mubsis.service.account.service;
+package com.tazegevrek.mubsis.service.account.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import com.tazegevrek.mubsis.domain.entity.Sirket;
 import com.tazegevrek.mubsis.service.account.dao.CompanyDao;
 
 @Service(value="sirketService")
-public class CompanyServiceImpl implements CompanyService{
+public class CompanyManagerImpl implements CompanyManager{
  
 	@Autowired
 	private CompanyDao sirketDao;

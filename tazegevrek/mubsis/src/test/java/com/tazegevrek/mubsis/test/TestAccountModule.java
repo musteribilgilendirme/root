@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
 import com.tazegevrek.mubsis.domain.entity.Kullanici;
 import com.tazegevrek.mubsis.service.account.dao.UserDao;
-import com.tazegevrek.mubsis.service.account.service.UserService;
+import com.tazegevrek.mubsis.service.account.manager.UserManager;
 import com.tazegevrek.mubsis.service.account.util.RegistrationConfirmation;
 import com.tazegevrek.mubsis.service.activiti.confirmation.ConfirmationService;
 
@@ -46,7 +46,7 @@ public class TestAccountModule extends AbstractTest {
 	private RuntimeService runtimeService;
 	
 	@Autowired
-	private UserService kullaniciService;
+	private UserManager kullaniciService;
 	
 	
 	@Test

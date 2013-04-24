@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tazegevrek.mubsis.domain.dto.NewUserDTO;
-import com.tazegevrek.mubsis.service.account.service.UserService;
+import com.tazegevrek.mubsis.service.account.manager.UserManager;
 import com.tazegevrek.mubsis.service.activiti.confirmation.AsycConfirmation;
 
 @Service(value="registrationConfirmation")
@@ -19,7 +19,7 @@ public class RegistrationConfirmation implements AsycConfirmation<NewUserDTO> {
 	private AccountTranslator kullaniciTranslator;
 	
 	@Autowired
-	private UserService kullaniciService;
+	private UserManager kullaniciService;
 	
 	@Override
 	public void timeout(NewUserDTO dto) {
